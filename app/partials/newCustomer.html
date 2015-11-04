@@ -1,0 +1,37 @@
+<!-- chapter4/partials/newCustomer.html -->
+
+
+<form ng-submit="submit()" ng-controller="AddCustomerCtrl">
+    <div>
+        <input type="text" ng-model="cName" required/>
+    </div>
+
+    <div>
+        <input type="text" ng-model="cCity" required/>
+    </div>
+
+    <div>
+        <button type="submit">Add Customer</button>
+    </div>
+
+</form>
+
+
+<!-- chapter4/partials/newCustomer.html (with controller as)-->
+
+<!--
+<form ng-submit="addCust.submit()" ng-controller="AddCustomerCtrl as addCust">
+    <div>
+        <input type="text" ng-model="addCust.cName" required/>
+    </div>
+
+    <div>
+        <input type="text" ng-model="addCust.cCity" required/>
+    </div>
+
+    <div>
+        <button id="f1" type="submit">Add Customer</button>
+    </div>
+
+</form>
+-->
