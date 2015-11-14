@@ -33,13 +33,13 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
         };
     }]);
 
-blogControllers.controller('BlogCtrl', ['$scope', 'BlogList',
-    function BlogCtrl($scope, BlogList) {
+blogControllers.controller('BlogCtrl', ['$scope',
+    function BlogCtrl($scope) {
         $scope.blogArticle = "This is a blog about AngularJS." +
             " We will cover how to build a blog and how to add " +
             "comments to the blog post.";
 
-        /*
+
         $scope.blogList = [{
             "_id": 1,
             "date": 1400623623107,
@@ -54,27 +54,14 @@ blogControllers.controller('BlogCtrl', ['$scope', 'BlogList',
             " web services that contain most of the business logic needed for the application"
         }
         ];
-        */
 
-        BlogList.get({},
-            function success(response) {
-                console.log("Success:" +
-                JSON.stringify(response));
-                $scope.blogList = response;
-            },
-            function error(errorResponse) {
-                console.log("Error:" +
-                JSON.stringify(errorResponse));
-            }
-        );
 }]);
 
 blogControllers.controller('BlogViewCtrl',
-    ['$scope', '$routeParams', 'BlogPost',
-    function BlogViewCtrl($scope, $routeParams, BlogPost) {
+    ['$scope', '$routeParams',
+    function BlogViewCtrl($scope, $routeParams) {
 
         var blogId = $routeParams.id;
-        /*
         var blog1 = {
             "_id": 1,
             "date": 1400623623107,
@@ -107,19 +94,6 @@ blogControllers.controller('BlogViewCtrl',
         } else if (blogId == '2') {
             $scope.blogEntry = blog2;
         }
-        */
-
-        BlogPost.get({id: blogId},
-            function success(response) {
-                console.log("Success:" +
-                JSON.stringify(response));
-                $scope.blogEntry = response;
-            },
-            function error(errorResponse) {
-                console.log("Error:" +
-                JSON.stringify(errorResponse));
-            }
-        );
 }]);
 
 helloWorldControllers.controller('MainCtrl',

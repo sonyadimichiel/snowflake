@@ -14,8 +14,7 @@ var helloWorldApp = angular.module('helloWorldApp', [
 
 var blogApp = angular.module('blogApp', [
     'ngRoute',
-    'blogControllers',
-    'blogServices'
+    'blogControllers'
 ]);
 
 var phonecatApp = angular.module('phonecatApp', [
@@ -29,11 +28,11 @@ phonecatApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/', {
-            templateUrl: 'partials/phone-list.html',
+            templateUrl: '../chp6_view/partials/phone-list.html',
             controller: 'PhoneListCtrl'
         }).
             when('/phones/:phoneId', {
-            templateUrl: 'partials/phone-detail.html',
+            templateUrl: '../chp6_view/partials/phone-detail.html',
             controller: 'PhoneDetailCtrl'
         });
     }]);
@@ -42,10 +41,10 @@ blogApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider.
             when('/', {
-            templateUrl: 'partials/main.html',
+            templateUrl: '../chp5_view/partials/main.html',
             controller: 'BlogCtrl'
         }).when('/blogPost/:id', {
-            templateUrl: 'partials/blogPost.html',
+            templateUrl: '../chp5_view/partials/blogPost.html',
             controller: 'BlogViewCtrl'
         });
 
@@ -56,7 +55,7 @@ helloWorldApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider.
             when('/', {
-            templateUrl: 'partials/main.html',
+            templateUrl: '../chp5_view/partials/main.html',
             controller: 'MainCtrl'
         }).when('/show', {
             templateUrl: 'partials/show.html',
