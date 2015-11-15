@@ -82,5 +82,5 @@ module.exports = function(config) {
     ],
 
     logLevel: config.LOG_DEBUG
-  })
-}
+  });
+};
